@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
 
-def square_matrix_simple(matrix=[]):
-    new_matrix = [[x*x for x in item] for item in matrix]
-    return (new_matrix)
+def search_replace(my_list, search, replace):
+    new = [(replace if x == search else x) for x in my_list]
+    return (new)
