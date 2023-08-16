@@ -4,10 +4,8 @@ Write the class Square that inherits from Rectangle
 """
 from models.rectangle import Rectangle
 
-
 class Square(Rectangle):
     """ This class defines the blueprint for a Square object """
-
     def __init__(self, size, x=0, y=0, id=None):
         """ This func initializes a Square object"""
         super().__init__(size, size, x, y, id)
@@ -19,7 +17,7 @@ class Square(Rectangle):
     @property
     def size(self):
         """Returns the size [width / height] of the square"""
-        return self.width if self.width else self.height
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -27,20 +25,17 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-    def update (self, *args, **kwargs):
+    def update(self, *args, **kwargs):
         """Updates the values of a Square object attributes"""
-        attrs = ['id', 'size', 'x', 'y']
         if args:
-            for arg in range(args):
-                if arg == 1:
-                    setattr(self, 'width', args[arg])
-                    setattr(self, 'height', args[arg])
-                else:
-                    setattr(self, attrs[arg], args[arg])
-        elif kwargs:
-            for key, value in kwargs:
+            attrs = ['id', 'size', 'x', 'y']
+            for i, arg in enumerate(args):
+                setattr(self, attrs[i], arg)
+        else:
+            for key, value in kwargs.items():
                 if key == "size":
-                    setattr(self, 'width', value)
-                    setattr(self, 'height', value)
+                    self.width = value
+                    self.height = value
                 else:
                     setattr(self, key, value)
+
