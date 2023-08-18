@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""unittest for Rectangle class"""
-
+"""Test for Square"""
 
 import os
 import unittest

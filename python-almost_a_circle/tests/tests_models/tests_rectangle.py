@@ -1,6 +1,5 @@
-i#!/usr/bin/python3
-"""unittest for Rectangle class"""
-
+#!/usr/bin/python3
+"""Test the REctangle class"""
 
 import unittest
 from io import StringIO
