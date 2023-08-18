@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Test the REctangle class"""
+"""Test the Rectangle class"""
 
 import unittest
 from io import StringIO
@@ -55,16 +55,16 @@ class TestRectangle(unittest.TestCase):
 
     def test_area(self):
         """Test for the Area"""
-        reactnage = Rectangle(5, 3)
-        self.assertEqual(reactnage.area(), 15)
+        rectangle = Rectangle(5, 3)
+        self.assertEqual(rectangle.area(), 15)
 
     def test__str__(self):
         """Test for the string repo of the rectange"""
         Base._Base__nb_objects = 0
         rectangle = Rectangle(5, 3)
-        with patch("sys.stdout", new=StringIO()) as out_rectange:
+        with patch("sys.stdout", new=StringIO()) as out_rectangle:
             print(rectangle)
-            self.assertEqual(out_rectange.getvalue(),
+            self.assertEqual(out_rectangle.getvalue(),
                              "[Rectangle] (1) 0/0 - 5/3\n")
 
     def test_display(self):
@@ -151,7 +151,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.y, 4)
 
     def test_create(self):
-        """Tests to creatr a new rectangle"""
+        """Tests to create a new rectangle"""
 
         r1 = Rectangle.create(**{'id': 89})
         self.assertEqual(r1.id, 89)
